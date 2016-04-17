@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mylotto 2.0 Desktop Test Suite" >
+	
+  <parameter name="selenium.host" value="cat" />
+  <!--parameter name="selenium.port" value="3737" /-->
+  <parameter name="selenium.browser" value="*firefox" />
+  <parameter name="selenium.url" value="https://mylotto.co.nz/" />
+  <parameter name="userid" value="lyan@planittesting.co.nz" />
+  <parameter name="password" value="password1" />
+
+
+  <test name="Mylotto 2.0 Desktop Test" >   
+
+	<classes>
+	    <class name="com.LottoNZ.AutoSLWebTest.Tests.LottoHomePageTest"/>
+		
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

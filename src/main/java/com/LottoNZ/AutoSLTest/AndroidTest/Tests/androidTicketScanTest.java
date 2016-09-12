@@ -25,8 +25,8 @@ public class androidTicketScanTest extends _AndroidTestBase {
 	String password = "password1";
 	String usernameText = "automation@autotest.com";
 	String serialNumber = "0660051678722018";
-	String validSerialNumber = "0660051678722018";
-	String InvalidSerialNumber = "0660051678722018";
+	String validSerialNumber = "0660089034281259";
+	String InvalidSerialNumber = "0660089034281259";
 	String NonWinSerialNumber = "0660051678722018";
 	String CashPrizeSerialNumber = "0660051678722018";
 	String MajorPrizeSerialNumber = "0660051678722018";

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import com.LottoNZ.AutoSLTest.IOSTest.pages.iOSRegistrationPage.RegistrationPage;
 import com.LottoNZ.AutoSLTest.Utils.DataGenerator;
 
-public class ioSRegistrationTest extends IOSTestBase {
+public class IOSRegistrationTest extends IOSTestBase {
 
 	@Test(dataProvider = "iosAppCapabilities")
 	public void iOSRegistration(String appiumVersion, String deviceName,

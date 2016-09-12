@@ -28,101 +28,14 @@ public class getActivationCode {
 	static String account3;
 	static String account4;
 
-	// public static String getDBString() {
-	// String dbStr = null;
-	// if (HelperMethods.baseURL.contains("2")) {
-	// dbStr = CAT2DB;
-	// } else if
-	// (HelperMethods.baseURL.startsWith("https://3.cat.mylotto.co.nz/")) {
-	// dbStr = CAT3DB;
-	// } else if
-	// (HelperMethods.baseURL.startsWith("https://1.cat.mylotto.co.nz/")) {
-	// dbStr = CAT1DB;
-	// }
-	// System.out.println(dbStr);
-	// return dbStr;
-	// }
-
 	static String CAT1DB = "jdbc:db2://192.168.101.87:50000/ESI_DB";
-
 	static String CAT2DB = "jdbc:db2://192.168.103.74:50000/ESI_DB";
-
 	static String CAT3DB = "jdbc:db2://192.168.101.74:50000/ESI_DB";
-
-	private static final String FILE_PATH = "C:\\Users\\CATPC\\workspace\\Test\\NewBankAccountList.csv"; // Replace
 	static String SIT1DB = "jdbc:db2://192.168.225.66:50000/ESI_DB";
+
 	public static void main(String[] args) throws IOException {
-
-		System.out.println("Getting random line from file: " + FILE_PATH);
-
-		InputStream is = null;
-		BufferedReader reader = null;
-		try {
-			is = new FileInputStream(FILE_PATH);
-
-			reader = new BufferedReader(new InputStreamReader(
-					new FileInputStream(FILE_PATH)));
-
-			System.out.println("Reading file...");
-			final List<String> list = new ArrayList<String>();
-			String line = reader.readLine();
-			while (line != null) {
-				list.add(line);
-				line = reader.readLine();
-			}
-
-			System.out.println("Generating random...");
-			final SecureRandom random = new SecureRandom();
-			final int row = random.nextInt(list.size());
-
-			System.out.println("Random selection is:\n");
-			System.out.println(list.get(row));
-
-		} finally {
-			if (is != null) {
-				is.close();
-			}
-			if (reader != null) {
-				reader.close();
-			}
-		}
 	}
-	public static String readRandomRow() throws IOException {
-		System.out.println("Getting random line from file: " + FILE_PATH);
 
-		InputStream is = null;
-		BufferedReader reader = null;
-		try {
-			is = new FileInputStream(FILE_PATH);
-
-			reader = new BufferedReader(new InputStreamReader(
-					new FileInputStream(FILE_PATH)));
-
-			System.out.println("Reading file...");
-			final List<String> list = new ArrayList<String>();
-			String line = reader.readLine();
-			while (line != null) {
-				list.add(line);
-				line = reader.readLine();
-			}
-
-			System.out.println("Generating random...");
-			final SecureRandom random = new SecureRandom();
-			final int row = random.nextInt(list.size());
-
-			System.out.println("Random selection is:\n");
-			System.out.println(list.get(row));
-			return list.get(row);
-		} finally {
-			if (is != null) {
-				is.close();
-			}
-			if (reader != null) {
-				reader.close();
-			}
-		}
-
-	}
 	public static String returnActivationId(String username)
 			throws ClassNotFoundException, SQLException {
 		Connection connection = null;

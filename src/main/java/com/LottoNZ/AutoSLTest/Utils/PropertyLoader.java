@@ -19,9 +19,14 @@ public class PropertyLoader {
 
 	private static final String ANDROID_PROP_FILE = "./config/androidConfig.properties";
 	private static FileInputStream fs;
-	private static final String PROP_FILE = "./config/projectConfig.properties";
+	private static final String PROP_FILE = "./config/_projectConfig.properties";
 	private static Properties props = new Properties();
 	private static final String WEB_PROP_FILE = "./config/webConfig.properties";
+	private static final String ElementObj_PROP_FILE = "./config/_ElementObjectRepository.properties";
+
+	private PropertyLoader() {
+
+	}
 
 	public static By getWebOjectLocator(String locatorName) throws IOException {
 
@@ -60,6 +65,7 @@ public class PropertyLoader {
 		}
 		return locator;
 	}
+
 	public static String loadAndroidProperty(String name) {
 		String value = "";
 		setFilePath(ANDROID_PROP_FILE);
@@ -69,6 +75,7 @@ public class PropertyLoader {
 		}
 		return value;
 	}
+
 	public static void loadFS() {
 		try {
 			props.load(fs);
@@ -76,6 +83,7 @@ public class PropertyLoader {
 			e.printStackTrace();
 		}
 	}
+
 	public static String loadProjectProperty(String name) {
 		String value = "";
 		setFilePath(PROP_FILE);
@@ -85,7 +93,7 @@ public class PropertyLoader {
 		}
 		return value;
 	}
-	
+
 	public static String loadProperty(String fileName, String keyName) {
 		String keyValue = "";
 		setFilePath(fileName);
@@ -115,7 +123,13 @@ public class PropertyLoader {
 		}
 	}
 
-	private PropertyLoader() {
-
+	public static String loadElementContentDecsValue(String name) {
+		String value = "";
+		setFilePath(ElementObj_PROP_FILE);
+		loadFS();
+		if (name != null) {
+			value = props.getProperty(name);
+		}
+		return value;
 	}
 }

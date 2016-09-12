@@ -29,7 +29,7 @@ public abstract class _AndroidBasePage {
 	protected static int timeWaitInSeconds = Integer.parseInt(PropertyLoader
 			.loadAndroidProperty("implicitlyWebWait"));
 
-	public static int swipeTime = 3000;
+	public static int swipeTime = 1000;
 
 	/**
 	 * Press the back button *

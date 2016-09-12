@@ -7,6 +7,10 @@ package com.LottoNZ.AutoSLTest.Utils;
  * @author CATPC
  *
  */
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
@@ -17,6 +21,25 @@ public class LogHelper {
 
 	public static void debug(String message) {
 		Log.debug(message);
+	}
+
+	public static void main(String[] args) {
+	}
+
+	// This is to print log for the ending of the test case
+	public static void recordEmail(String email) {
+		try {
+			String str = "SomeMoreTextIsHere";
+			File newTextFile = new File("./email.txt");
+
+			FileWriter fw = new FileWriter(newTextFile);
+			fw.append(email + "\r\n");
+			fw.close();
+
+		} catch (IOException iox) {
+			// do stuff with exception
+			iox.printStackTrace();
+		}
 	}
 
 	// This is to print log for the ending of the test case

@@ -12,8 +12,53 @@ import org.openqa.selenium.WebElement;
 
 import com.LottoNZ.AutoSLAndroidTest.util.mobileSwipeHelper;
 import com.LottoNZ.AutoSLTest.Utils.LogHelper;
+import com.LottoNZ.AutoSLTest.Utils.PropertyLoader;
 
 public class androidSignupRegistrationPage extends _AndroidBasePage {
+	protected static String emailTextBox_ContentDesc = "emailAddressFromRegistrationForm";
+	protected static String firstNameTextBox_ContentDesc = "firstNameFromRegistrationForm";
+	protected static String lastNameTextBox_ContentDesc = "lastNameFromRegistrationForm";
+	protected static String PasswordTextBox_ContentDesc = "password";
+	protected static String dateTextBox_ContentDesc = "birthDay";
+	protected static String monthListButton_ContentDesc = "birthMonth";
+	protected static String yearTextbox_ContentDesc = "birthYear";
+	protected static String femaleRadioButton_ContentDesc = "genderFemaleCheck";
+	protected static String maleRadioButton_ContentDesc = "genderMaleCheck";
+	protected static String mobileCodeTexbox_ContentDesc = "mobileNetworkFromCompleteRegistrationForm";
+	protected static String mobileNumberTexbox_ContentDesc = "mobileNumberFromCompleteRegistrationForm";
+	protected static String regionSelectlist_ContentDesc = "regionSelect";
+	protected static String regionLocationList_ContentDesc = "location";
+	protected static String securitySelectlist_ContentDesc = "sequeiryQuestionSelect";
+	protected static String secAnswerTextbox_ContentDesc = "sequeiryQuestionSelectText";
+
+	protected static String showpasswordLink_ContentDesc = "Show password";
+	protected static String hidepasswordLink_ContentDesc = "Hide password";
+
+	protected static String jackpotPromoCheckbox_ContentDesc = "jackpotRemindersCheck";
+	protected static String jackpotRemindersSelect_ContentDesc = "jackpotRemindersSelect";
+	protected static String resultsPromoCheckbox_ContentDesc = "promotionRemindersCheck";
+	protected static String IKCheckbox_ContentDesc = "instantKiwiCheck";
+
+	protected static String signupBtn_ContentDesc = "signUp";
+	protected static String loginBtn_ContentDesc = "loginFromRegisterForm";
+
+	private androidSignupRegistrationPage() {
+		emailTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("emailTextBox_ContentDesc");
+		firstNameTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("CheckresultsButton_ContentDesc");
+		lastNameTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("lastNameTextBox_ContentDesc");
+		PasswordTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("PasswordTextBox_ContentDesc");
+		dateTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("dateTextBox_ContentDesc");
+		monthListButton_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("monthListButton_ContentDesc");
+		PasswordTextBox_ContentDesc = PropertyLoader
+				.loadElementContentDecsValue("PasswordTextBox_ContentDesc");
+	}
+
 	/**
 	 * go to the Registration page
 	 * 
@@ -28,109 +73,81 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 	/**
 	 * WebElement
 	 */
-	public static WebElement dateTextBox(AppiumDriver driver)
-			throws InterruptedException {
-
-		return find(driver, "birthDay");
-	}
-
-	public static WebElement emailisReqValidation(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Email address is required");
-	}
 
 	public static WebElement emailTextBox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "emailAddressFromRegistrationForm");
-	}
-
-	public static WebElement firstNameisRequired(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "First name is required");
+		return find(driver, emailTextBox_ContentDesc);
 	}
 
 	public static WebElement firstNameTextBox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "firstNameFromRegistrationForm");
-	}
-
-	public static WebElement hidepasswordLink(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Hide password");
-	}
-
-	public static WebElement IKCheckbox(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Instant Kiwi news and reminders");
-	}
-
-	public static WebElement jackpotPromoCheckbox(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Jackpots reminders + Promotions");
-	}
-
-	public static WebElement jackpotRemindersSelect(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "jackpotRemindersSelect");
-	}
-
-	public static WebElement lastNameisReqValidation(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Last name is required");
+		return find(driver, firstNameTextBox_ContentDesc);
 	}
 
 	public static WebElement lastNameTextBox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "lastNameFromRegistrationForm");
+		return find(driver, lastNameTextBox_ContentDesc);
 	}
 
-	public static WebElement loginLink(AppiumDriver driver)
+	public static WebElement PasswordTextBox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "Log in");
+		return find(driver, PasswordTextBox_ContentDesc);
 	}
 
-	public static WebElement mobileCodeTexbox(AppiumDriver driver)
+	public static WebElement showpasswordLink(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "mobileNetworkFromCompleteRegistrationForm");
+		return find(driver, showpasswordLink_ContentDesc);
 	}
 
-	public static WebElement mobileNumberTexbox(AppiumDriver driver)
+	public static WebElement dateTextBox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "mobileNumberFromCompleteRegistrationForm");
+
+		return find(driver, dateTextBox_ContentDesc);
 	}
 
-	public static WebElement monthClick(AppiumDriver driver)
+	public static WebElement monthListButton(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "Month");
+		return find(driver, monthListButton_ContentDesc);
 	}
 
 	public static void monthSelect(AppiumDriver driver, String monthName)
 			throws Exception {
 		LogHelper.info(" select month ......" + monthName);
-		monthClick(driver).click();
+		monthListButton(driver).click();
 		Thread.sleep(1000);
 		find(driver, monthName).click();
 
 	}
 
-	public static WebElement passwordisReqValidation(AppiumDriver driver)
+	public static WebElement yearTextbox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "Password is required");
+
+		return find(driver, yearTextbox_ContentDesc);
 	}
 
-	public static WebElement PasswordTextBox(AppiumDriver driver)
+	public static WebElement femaleRadioButton(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "password");
+		return find(driver, femaleRadioButton_ContentDesc);
 	}
 
-	public static WebElement regionLocation(AppiumDriver driver,
-			String locationStr) throws InterruptedException {
-		return find(driver, locationStr);
+	public static WebElement maleRadioButton(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, maleRadioButton_ContentDesc);
 	}
 
-	public static WebElement regionLocationList(AppiumDriver driver)
+	public static WebElement mobileCodeTexbox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "location");
+		return find(driver, mobileCodeTexbox_ContentDesc);
+	}
+
+	public static WebElement mobileNumberTexbox(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, mobileNumberTexbox_ContentDesc);
+	}
+
+	public static WebElement regionSelectlist(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, regionSelectlist_ContentDesc);
 	}
 
 	public static WebElement regionSelect(AppiumDriver driver, String regionStr)
@@ -138,24 +155,19 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 		return find(driver, regionStr);
 	}
 
-	public static WebElement regionSelectlist(AppiumDriver driver)
+	public static WebElement regionLocationList(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "regionSelect");
+		return find(driver, regionLocationList_ContentDesc);
 	}
 
-	public static WebElement resultsPRomoCheckbox(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "Results + Promotions");
+	public static WebElement regionLocation(AppiumDriver driver,
+			String locationStr) throws InterruptedException {
+		return find(driver, locationStr);
 	}
 
-	public static WebElement secAnswerisRequired(AppiumDriver driver)
+	public static WebElement securitySelectlist(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "A security question and an answer is required");
-	}
-
-	public static WebElement secAnswerTextbox(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "sequeiryQuestionSelectText");
+		return find(driver, securitySelectlist_ContentDesc);
 	}
 
 	public static WebElement securityQuestion(AppiumDriver driver,
@@ -163,9 +175,39 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 		return find(driver, questionStr);
 	}
 
-	public static WebElement securitySelectlist(AppiumDriver driver)
+	public static WebElement secAnswerTextbox(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "sequeiryQuestionSelect");
+		return find(driver, secAnswerTextbox_ContentDesc);
+	}
+
+	public static WebElement jackpotPromoCheckbox(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, jackpotPromoCheckbox_ContentDesc);
+	}
+
+	public static WebElement jackpotRemindersSelect(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, jackpotRemindersSelect_ContentDesc);
+	}
+
+	public static WebElement resultsPromoCheckbox(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, resultsPromoCheckbox_ContentDesc);
+	}
+
+	public static WebElement IKCheckbox(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, IKCheckbox_ContentDesc);
+	}
+
+	public static WebElement signupBtn(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, signupBtn_ContentDesc);
+	}
+
+	public static WebElement loginLink(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, loginBtn_ContentDesc);
 	}
 
 	public static WebElement tncLink(AppiumDriver driver)
@@ -173,20 +215,37 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 		return find(driver, "terms and conditions");
 	}
 
-	public static WebElement yearTextbox(AppiumDriver driver)
+	/**
+	 * Warning Msg
+	 */
+	public static WebElement emailisReqValidation(AppiumDriver driver)
 			throws InterruptedException {
-
-		return find(driver, "birthYear");
+		return find(driver, "Email address is required");
 	}
 
-	public static WebElement showpasswordLink(AppiumDriver driver)
+	public static WebElement firstNameisRequired(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "Show password");
+		return find(driver, "First name is required");
 	}
 
-	public static WebElement signupBtn(AppiumDriver driver)
+	public static WebElement hidepasswordLink(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "REGISTER NOW");
+		return find(driver, "Hide password");
+	}
+
+	public static WebElement lastNameisReqValidation(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "Last name is required");
+	}
+
+	public static WebElement passwordisReqValidation(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "Password is required");
+	}
+
+	public static WebElement secAnswerisRequired(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "A security question and an answer is required");
 	}
 
 	/**
@@ -196,7 +255,12 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 	public static void clickGenderButton(AppiumDriver driver, String genderStr)
 			throws Exception {
 		LogHelper.info(" select gender........" + genderStr);
-		find(driver, genderStr).click();
+		if (genderStr.equals("F")) {
+			femaleRadioButton(driver).click();
+		} else {
+			maleRadioButton(driver).click();
+
+		}
 	}
 
 	public static void clickJackpotRemindersSelect(AppiumDriver driver)
@@ -360,7 +424,7 @@ public class androidSignupRegistrationPage extends _AndroidBasePage {
 	/* Email preferences */
 	public static void tickPromotionReminders(AppiumDriver driver)
 			throws InterruptedException {
-		resultsPRomoCheckbox(driver).click();
+		resultsPromoCheckbox(driver).click();
 	}
 
 }

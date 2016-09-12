@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.LottoNZ.AutoSLTest.Utils.dbConnector;
+import com.LottoNZ.AutoSLTest.Utils.DBHelper;
 
 public class iOSRegistrationPage extends IOSBasepage {
 
@@ -51,7 +51,7 @@ public class iOSRegistrationPage extends IOSBasepage {
 		public static void inputActivationid(AppiumDriver<WebElement> driver,
 				String username) throws IOException, Exception, SQLException {
 			Thread.sleep(3000);
-			String activationCode = dbConnector.getActivationId(username);
+			String activationCode = DBHelper.getActivationId(username);
 			System.out.println(" input activation id........" + activationCode);
 			activationCodeTextBox(driver).sendKeys(activationCode);
 		}

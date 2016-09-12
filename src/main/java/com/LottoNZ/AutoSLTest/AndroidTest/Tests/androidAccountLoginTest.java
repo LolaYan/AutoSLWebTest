@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import com.LottoNZ.AutoSLTest.AndroidTest.Pages.androidLoginPage;
 import com.LottoNZ.AutoSLTest.AndroidTest.Pages.androidLottoPage;
 import com.LottoNZ.AutoSLTest.AndroidTest.Pages.androidNavBarPage;
+import com.LottoNZ.AutoSLTest.Utils.LogHelper;
 import com.LottoNZ.AutoSLTest.WebTest.Tests.verify;
 
 public class androidAccountLoginTest extends _AndroidTestBase {
@@ -43,12 +44,12 @@ public class androidAccountLoginTest extends _AndroidTestBase {
 		androidLoginPage.enterLoginemail(driver, usernameText);
 		androidLoginPage.enterLoginPassword(driver, password);
 		androidLoginPage.clickLoginBtn(driver);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		// Verify Account Balance is showing
 		String actualAccountBalance = androidNavBarPage
 				.getAccountBalanceinNavBar(driver);
 		verify.isTextPresent(actualAccountBalance);
-
+		
 	}
 }

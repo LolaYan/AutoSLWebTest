@@ -27,7 +27,7 @@ public class androidLottoDIPPurchaseTest extends _AndroidTestBase {
 	String usernameText = "automation@autotest.com";
 
 	@Test(dataProvider = "AndroidAppCapabilities")
-	public void LottoDIPStarterLuckyTest(String appiumVersion,
+	public void LottoDIP_StarterLucky_Test(String appiumVersion,
 			String deviceName, String deviceType, String deviceOrientation,
 			String platformVersion, String platformName, String browserName,
 			String app, Method method) throws InvalidElementStateException,
@@ -47,7 +47,7 @@ public class androidLottoDIPPurchaseTest extends _AndroidTestBase {
 	}
 
 	@Test(dataProvider = "AndroidAppCapabilities")
-	public void LottoDIPStarterPowerTest(String appiumVersion,
+	public void LottoDIP_StarterPower_Test(String appiumVersion,
 			String deviceName, String deviceType, String deviceOrientation,
 			String platformVersion, String platformName, String browserName,
 			String app, Method method) throws InvalidElementStateException,

@@ -41,9 +41,7 @@ For local appium running, place the latest test app(apk/ipa) in app folder.
 Then, localAppiumRunMode=OFF in ./config/androidConfig.properties.
 
 Find test file: /src/main/java/com/LottoNZ/AutoSLAndroidTest/Tests/AndroidLottoHomePageTest.java. Right Click it, run as TestNG.
-```
-Give an example
-```
+
 
 ### Running the tests via Local Appium Driver
 

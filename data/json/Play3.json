@@ -1,0 +1,37 @@
+{
+  "sessionId": "X1IC9AMZ18LCGCREWY9H9YM7MNC6Q9TM",
+  "channelId": 1,
+  "play3Wagers": [
+    {
+      "purchaseType": "Pick Your Own",
+      "wagerAmount": 6,
+      "numberOfBoards": 2,
+      "numberOfDraws": 2,
+      "couponType": true,
+      "play3WagerDetails": [
+        {
+          "play3Boards": [
+            {
+              "numbers": [
+                0,
+                6,
+                3
+              ],
+              "play3PlayType": "Any",
+              "play3BoardAmount": 1
+            },
+            {
+              "numbers": [
+                5,
+                6,
+                5
+              ],
+              "play3PlayType": "ExactPairs",
+              "play3BoardAmount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

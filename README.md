@@ -31,49 +31,57 @@ What things you need to install the software and how to install them
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Before running, please prepare the test objects first. 
+And, check all the config settings in ./config/ folder.
 
 ### Running the tests in Remote Cloud Platform - Sauce labs
 
-Explain what these tests test and why
+For local appium running, place the latest test app(apk/ipa) in app folder. 
 
+Then, localAppiumRunMode=OFF in ./config/androidConfig.properties.
+
+Find test file: /src/main/java/com/LottoNZ/AutoSLAndroidTest/Tests/AndroidLottoHomePageTest.java. Right Click it, run as TestNG.
 ```
 Give an example
 ```
 
 ### Running the tests via Local Appium Driver
 
-Explain what these tests test and why
+For cloud sauce labs running, upload the test app into sauce labs cloud storage.
+Reference link: https://wiki.saucelabs.com/display/DOCS/Uploading+Mobile+Applications+to+Sauce+Storage+for+Testing
+
+Then, localAppiumRunMode=ON in ./config/androidConfig.properties.
+
+Find test file: /src/main/java/com/LottoNZ/AutoSLAndroidTest/Tests/AndroidLottoHomePageTest.java. Right Click it, run as TestNG.
 
 ```
-Give an example
+@Test(dataProvider = "AndroidCapabilities")
+	public void verifyLottoTest(String appiumVersion,
+			String deviceName, String deviceType, String deviceOrientation,
+			String platformVersion, String platformName, String browserName,
+			String app, Method method) throws MalformedURLException,
+			InvalidElementStateException, UnexpectedException {
+		// create webdriver session
+		AppiumDriver driver = createDriver(appiumVersion, deviceName, deviceType
+				,deviceOrientation, platformVersion, platformName,
+				browserName, app, method.getName());
+		System.out.println("create over");
+		driver.get("https://mylotto.co.nz/");
+		// Go to Lotto Homepage
+		LottoHomePage HomePage = new LottoHomePage(driver);
+
+}
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* Dropwizard - Bla bla bla
-* Maven - Maybe
-* Atom - ergaerga
+* TestNG - Introduction
+* Maven - Introduction
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
 * **Lola Yan** - *Initial work* - [LolaYan](https://github.com/LolaYan)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 

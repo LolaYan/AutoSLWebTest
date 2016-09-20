@@ -18,7 +18,7 @@ public class androidNavBarPage extends _AndroidBasePage {
 	protected static String resultsNav_ContentDesc = "Results button";
 	protected static String scanNav_ContentDesc = "Scan tickets";
 	protected static String loginNav_ContentDesc = "loginOrSignupNavigationLink";
-	protected static String accountNav_ContentDesc = "Close account menu";
+	protected static String accountNav_ContentDesc = "Open account menu";
 	protected static String ticketsNav_ContentDesc = "My tickets";
 
 	protected static String loginRSideNav_Login_ContentDesc = "LOGIN";

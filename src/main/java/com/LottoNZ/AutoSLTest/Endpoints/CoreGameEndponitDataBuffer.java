@@ -183,4 +183,11 @@ public class CoreGameEndponitDataBuffer extends BaseEndpoint {
 		System.out.print(res);
 		return res;
 	}
+	
+	public static String LottoPYORequestBody( ) throws JSONException {
+		String jsonData = readFile("./data/json/LottoPYO.json");
+
+		System.out.print(jsonData);
+		return jsonData;
+	}
 }

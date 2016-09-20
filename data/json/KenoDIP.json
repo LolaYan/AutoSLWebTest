@@ -1,0 +1,40 @@
+{
+  "channelId": 1,
+  "kenoWagers": [
+    {
+      "purchaseType": "DIP",
+      "wagerAmount": 5,
+      "pricePerBoard": 1,
+      "numberOfBoards": 1,
+      "numberOfDraws": 5,
+      "couponType": true,
+      "kenoWagerDetails": [
+        {
+          "kenoDip": 0,
+          "drawTimes": [
+            10,
+            13,
+            18
+          ],
+          "kenoBoard": [
+            {
+              "groupNumber": 10,
+              "numbers": [
+                4,
+                71,
+                5,
+                12,
+                29,
+                48,
+                11,
+                57,
+                58,
+                59
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

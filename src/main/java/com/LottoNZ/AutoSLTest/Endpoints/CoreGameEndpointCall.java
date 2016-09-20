@@ -66,14 +66,20 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 	protected static int weeklyTransferredCount;
 	protected static String creditCardNumber = "4111111111111111";
 	protected static String ExpiryMonth = "12";
-	protected static String ExpiryYear = "12";
+	protected static String ExpiryYear = "22";
 	protected static String Cvc2 = "123";
 	protected static String CardHolderName = "test";
 
 	public static void main(String[] args) throws Exception {
+		//Generate a new user
 		String emailAddress = DataGenerator.generateEmail(10);
-		signupNewAccount(emailAddress, password);
-		LoginAccount(emailAddress, password);
+		//emailAddress = "changepassword@autotest.com";
+		int amount = 50;
+		int cvc = 123;
+		
+		/*	Sign up work flow	*/
+		signupNewAccountPost(emailAddress, password);
+		LoginAccountPost(emailAddress, password);
 		activateEmail(emailAddress);
 		String acctNumber = BankAccountGenerator.getBankAccount();
 		int weeklyActualLimit = 150;
@@ -81,17 +87,35 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 		signupSpendinglimitsPost(acctNumber, weeklyActualLimit,
 				monthlyActualLimit);
 
+		/*
+		 * Top up workflow
+		 */
+		LoginAccountPost(emailAddress, password);
+		WalletValidationPost(password, returnUrl);
+		DPSCreditRegisterPost(transactionId);
+		CreditCardRegisterPost(transactionId);		
+		CreditCardTopupPut(amount, cvc, password);
+
+		/*
+		 * Top up again workflow
+		 */
+		ExpiryMonth = "04";
+		ExpiryYear = "28";
+		LoginAccountPost(emailAddress, password);
 		WalletValidationPost(password, returnUrl);
 		DPSCreditRegisterPost(transactionId);
 		CreditCardRegisterPost(transactionId);
-		int amount = 50;
-		int cvc = 123;
-		CreditCardTopupPost(amount, cvc, password);
-		getWalletBalanceInfo();
-		getUserProfileInfo();
+		CreditCardTopupPut(amount, cvc, password);
+		
+		/*
+		 *  Lotto Wager
+		 */
+		getWalletBalanceInfo(); getUserProfileInfo(); 
+		LottoPYOWagerPost(); 
+		
 	}
 
-	public static void signupNewAccount(String emailAddress, String password)
+	public static void signupNewAccountPost(String emailAddress, String password)
 			throws Exception {
 
 		// String emailAddress = DataGenerator.generateEmail(10);
@@ -123,7 +147,7 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 
 	}
 
-	public static void LoginAccount(String emailAddress, String password)
+	public static void LoginAccountPost(String emailAddress, String password)
 			throws Exception {
 
 		String postBody = postLoginRequestBody(emailAddress, password);
@@ -300,7 +324,7 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 
 	}
 
-	public static void CreditCardTopupPost(int amount, int cvc, String password)
+	public static void CreditCardTopupPut(int amount, int cvc, String password)
 			throws Exception {
 		String postBody = CreditCardTopupRequestBody(amount, cvc, password);
 
@@ -317,10 +341,16 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 		// Call request
 		sendHTTPRequest(method, url, headerList, postBody);
 
-		// parse json response
-		int walletBalanceRet = jsonResponseBody.getInt("walletBalance");
-		walletBalance = walletBalanceRet;
-		System.out.println(walletBalance);
+		if (responseCode == 200) {
+
+			// parse json response
+			int walletBalanceRet = jsonResponseBody.getInt("walletBalance");
+			walletBalance = walletBalanceRet;
+			System.out.println(walletBalance);
+		} else {
+			System.out.println(responseBody);
+
+		}
 
 	}
 
@@ -482,5 +512,27 @@ public class CoreGameEndpointCall extends CoreGameEndponitDataBuffer {
 		int winningTypeNotificationsCount = jsonResponseBody
 				.getInt("winningTypeNotificationsCount");
 		System.out.println(winningTypeNotificationsCount);
+	}
+
+	public static void LottoPYOWagerPost() throws Exception {
+		String postBody = LottoPYORequestBody();
+
+		String url = endpoint + "wagers/" + USER_ID;
+		String method = "POST";
+
+		// Header Setting
+		headerList.clear();
+		headerList.add(new SimpleEntry<String, String>("Content-Type",
+				"application/json"));
+		headerList.add(new SimpleEntry<String, String>("USER_ID", USER_ID));
+		headerList.add(new SimpleEntry<String, String>("ESI_SID", ESI_SID));
+
+		// Call request
+		sendHTTPRequest(method, url, headerList, postBody);
+
+		// parse json response
+		// String messageRet = jsonResponseBody.getString("message");
+		// System.out.println(messageRet);
+
 	}
 }

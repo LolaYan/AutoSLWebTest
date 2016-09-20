@@ -1,0 +1,67 @@
+{
+  "channelId": 1,
+  "lottoWagers": [
+    {
+      "purchaseType": "Pick Your Own",
+      "wagerAmount": 9.6,
+      "numberOfBoards": 4,
+      "numberStrikeBoards": 0,
+      "numberPowerballBoards": 4,
+      "numberOfDraws": 2,
+      "couponType": true,
+      "lottoWagerDetails": [
+        {
+          "lottoBoard": [
+            {
+              "powerballNumber": 8,
+              "numbers": [
+                8,
+                15,
+                21,
+                26,
+                29,
+                32
+              ]
+            },
+            {
+              "powerballNumber": 1,
+              "numbers": [
+                3,
+                8,
+                12,
+                14,
+                20,
+                25
+              ]
+            },
+            {
+              "powerballNumber": 2,
+              "numbers": [
+                4,
+                7,
+                25,
+                34,
+                35,
+                40
+              ]
+            },
+            {
+              "powerballNumber": 1,
+              "numbers": [
+                18,
+                19,
+                20,
+                21,
+                26,
+                36
+              ]
+            }
+          ],
+          "drawDays": [
+            "Sat"
+          ]
+        }
+      ]
+    }
+  ]
+}

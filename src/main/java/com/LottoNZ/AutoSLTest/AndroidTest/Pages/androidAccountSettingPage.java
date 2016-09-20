@@ -24,12 +24,10 @@ public class androidAccountSettingPage extends _AndroidBasePage {
 	 * Element
 	 */
 
-	// myFunds
 	// myDetails
-
-	public static WebElement closeAccount(AppiumDriver driver)
+	public static WebElement nameEdit(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "closeAccount");
+		return find(driver, "nameEdit");
 	}
 
 	public static WebElement emailEdit(AppiumDriver driver)
@@ -37,54 +35,14 @@ public class androidAccountSettingPage extends _AndroidBasePage {
 		return find(driver, "emailEdit");
 	}
 
-	public static WebElement locationEdit(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "locationEdit");
-	}
-
-	public static WebElement nameEdit(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "nameEdit");
-	}
-
 	public static WebElement phoneNumberEdit(AppiumDriver driver)
 			throws InterruptedException {
 		return find(driver, "phoneNumberEdit");
 	}
 
-	public static WebElement settingsNotification(AppiumDriver driver)
+	public static WebElement locationEdit(AppiumDriver driver)
 			throws InterruptedException {
-		return find(driver, "settingsCommunicationPreferences");
-	}
-
-	public static WebElement spendingLimits(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "spendingLimits");
-	}
-
-	public static WebElement topUpDebitOrCreditCard(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "topUpDebitOrCreditCard");
-	}
-
-	public static WebElement topUpInternetBanking(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "topUpInternetBanking");
-	}
-
-	public static WebElement withdrawFunds(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "withdrawFunds");
-	}
-
-	public static WebElement blockGames(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "blockGames");
-	}
-
-	public static WebElement changeMyBankAccount(AppiumDriver driver)
-			throws InterruptedException {
-		return find(driver, "changeMyBankAccount");
+		return find(driver, "locationEdit");
 	}
 
 	public static WebElement changePassword(AppiumDriver driver)
@@ -97,13 +55,61 @@ public class androidAccountSettingPage extends _AndroidBasePage {
 		return find(driver, "changeSecurityQuestion");
 	}
 
+	public static WebElement settingsNotification(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "settingsCommunicationPreferences");
+	}
+
+	public static WebElement blockGames(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "blockGames");
+	}
+
+	public static WebElement closeAccount(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "closeAccount");
+	}
+
+	// myFunds
+	// Missing in app
+	public static WebElement topUpDebitOrCreditCard(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "topUpDebitOrCreditCard");
+	}
+
+	// replaceCard
+	public static WebElement replaceCard(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "replaceCard");
+	}
+
+	public static WebElement topUpInternetBanking(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "topUpInternetBanking");
+	}
+
+	public static WebElement withdrawFunds(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "withdrawFunds");
+	}
+
+	public static WebElement changeMyBankAccount(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "changeMyBankAccount");
+	}
+
+	public static WebElement spendingLimits(AppiumDriver driver)
+			throws InterruptedException {
+		return find(driver, "spendingLimits");
+	}
+
 	/**
 	 * Method
 	 * 
 	 * @param driver
 	 * @throws InterruptedException
 	 */
-	
+
 	public static void clickBlockGames(AppiumDriver driver)
 			throws InterruptedException {
 		LogHelper.info("Click blockGames");

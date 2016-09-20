@@ -1,0 +1,38 @@
+{
+  "channelId": 1,
+  "bullseyeWagers": [
+    {
+      "purchaseType": "Pick Your Own",
+      "wagerAmount": 4,
+      "numberOfBoards": 2,
+      "numberOfDraws": 1,
+      "couponType": true,
+      "bullseyeWagerDetails": [
+        {
+          "bullseyeBoard": [
+            {
+              "numbers": [
+                7,
+                8,
+                1,
+                8,
+                6,
+                3
+              ]
+            },
+            {
+              "numbers": [
+                8,
+                2,
+                9,
+                3,
+                1,
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

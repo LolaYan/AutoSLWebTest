@@ -84,7 +84,7 @@ public class DriverHelper {
 		}
 
 		capabilities.setCapability("name", methodName);
-
+		LogHelper.info("Sauce Labs Connection url: "+slUrl.toString());
 		androidDriver = new AndroidDriver(slUrl, capabilities);
 		setImplicitlyWait(androidDriver);
 		// set current sessionId

@@ -1,0 +1,28 @@
+{
+  "channelId": 1,
+  "bullseyeWagers": [
+    {
+      "purchaseType": "DIP",
+      "wagerAmount": 2,
+      "numberOfBoards": 1,
+      "numberOfDraws": 1,
+      "couponType": true,
+      "bullseyeWagerDetails": [
+        {
+          "bullseyeBoard": [
+            {
+              "numbers": [
+                5,
+                6,
+                5,
+                8,
+                8,
+                5
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

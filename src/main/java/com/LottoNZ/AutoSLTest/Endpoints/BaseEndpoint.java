@@ -6,6 +6,7 @@ package com.LottoNZ.AutoSLTest.Endpoints;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,7 +34,6 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import org.openqa.selenium.WebDriver;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -303,5 +303,22 @@ public class BaseEndpoint {
 		// print result
 		System.out.println(response.toString());
 
+	}
+
+	public static String readFile(String filename) {
+		String result = "";
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(filename));
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				sb.append(line);
+				line = br.readLine();
+			}
+			result = sb.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

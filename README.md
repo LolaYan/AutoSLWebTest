@@ -1,11 +1,41 @@
 # AutoSLWebTest
-Initial Automation framewprk using Sauce Labs, TestNG
-
-Before running this project, make sure you have jdk dev environment set up.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Framework Conposition:
+```
+Automation Frameowrk Type: Page Object Framework
+Automation Test Framework: TestNG
+Automation Tools: Appium, Sauce Labs Cloud.
+```
+```
+1. Web Test Automation.
+2. Mobile Android Test Automation
+3. Mobile IOS Test Automation
+```
+
+### Project Structure:
+```
+ - AutoSLTest.Driver
+ - AutoSLTest.Utils
+ - AutoSLTest.WebTest.Pages
+ - AutoSLTest.WebTest.Tests
+ - AutoSLTest.WebTest.Utils
+ - AutoSLTest.AndoidTest.Pages
+ - AutoSLTest.AndoidTest.Tests
+ - AutoSLTest.AndoidTest.Utils
+ - AutoSLTest.IOSTest.Pages
+ - AutoSLTest.IOSTest.Tests
+ - AutoSLTest.IOSTest.Utils
+ - config
+ - log
+ - apps
+ - libs
+ - pom.xml
+ - log4j.xml
+```
 
 ### Prerequisities
 

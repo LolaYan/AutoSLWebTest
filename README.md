@@ -57,14 +57,18 @@ Most Common Utils are:
  DataGenerator is to generate test data like email, phone number, guid, bank account, user name, random string, random number, etc.
  - DBHelper
  DBHelper is to handle different DB operation - query, update, delete.
- Also, DBHelper should be compatible with different type DB - mysql, db2, jdbc, etc. This requires jars to be imported in the project.
+ Also, DBHelper should be compatible with different type DB - mysql, db2, jdbc, etc. 
+ This requires jars to be imported in the project.
  - LogHelper
- During the running of test case user wants some information to be logged in the console. Information could be any detail depends upon the purpose. Log4j is applied for it here.
+ During the running of test case user wants some information to be logged in the console. 
+ Information could be any detail depends upon the purpose. Log4j is applied for it here.
  - PropertyLoader
  PropertyLoader is to load the prperty value from the properties file in config folder.
  - Verification
- Verification helps your test execution to continue even if there are any assertion failures and throw all errors at the end.
- Code is referred from https://muthutechno.wordpress.com/2015/01/26/implementing-verify-statements-for-testng-framework/.
+ Verification helps your test execution to continue,
+ even if there are any assertion failures and throw all errors at the end.
+ Code is referred from:
+ https://muthutechno.wordpress.com/2015/01/26/implementing-verify-statements-for-testng-framework/.
 ```
 #### Enums:
 #### config:

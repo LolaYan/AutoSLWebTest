@@ -70,9 +70,34 @@ Most Common Utils are:
  Code is referred from:
  https://muthutechno.wordpress.com/2015/01/26/implementing-verify-statements-for-testng-framework/.
 ```
-#### Enums:
-#### config:
 
+#### config:
+config folder includes all the project properties file, example as below:
+```
+! SauceConnectCmdRelayType = No, VM. Local
+SauceConnectCmdRelayType=No
+seleniumURI=@ondemand.saucelabs.com:80/wd/hub
+vmSeleniumURI=@192.168.200.70:4445
+localSeleniumURI=@localhost:4445
+localAppiumRunMode=ON
+localAppiumURI=http://127.0.0.1:4723/wd/hub
+tunnelIdentifier = Mudra CAT PC
+sauceUname = testsauceUname
+sauceUkay = 4441f476-xxxx-xxxx-xxxx-437e8323d461
+! app info - Android apk
+sauce.LottoAPK.filename = sauce-storage:demo.apk
+sauce.LottoAPK.appPackage = co.nz.demo
+sauce.LottoAPK.appActivity = co.nz.demo.MainActivity
+! app info - IOS ipa
+sauce.LottoIPA.filename = sauce-storage:demo.zip
+! time wait
+timeWaitInSeconds=40
+implicitlyWebWait=40
+elementWait=30
+! Acceptable value for log could be ON, OFF
+log=ON
+EnableLogin=ON
+```
 ### Prerequisities
 
 What things you need to install the software and how to install them

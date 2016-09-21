@@ -81,7 +81,6 @@ vmSeleniumURI=@192.168.200.70:4445
 localSeleniumURI=@localhost:4445
 localAppiumRunMode=ON
 localAppiumURI=http://127.0.0.1:4723/wd/hub
-tunnelIdentifier = Mudra CAT PC
 sauceUname = testsauceUname
 sauceUkay = 4441f476-xxxx-xxxx-xxxx-437e8323d461
 ! app info - Android apk

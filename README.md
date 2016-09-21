@@ -36,6 +36,38 @@ Automation Tools: Appium, Sauce Labs Cloud.
  - pom.xml
  - log4j.xml
 ```
+#### Driver:
+```
+ - DeviceDataProvider
+ DataProvider is to set the DesiredCapabilities data to be used. 
+ It returns two dimensional array of objects with browser, version, and platform information.
+ - DriverHelper
+ DriverHelper defines the creation of androidDriver, iosDriver, webDriver. 
+ Also define implicitlyWait and pageloadTimeout here.
+ - SauceHelper
+ SauceHelper will return credential data for Sauce Connect, 
+ which are read from ipConfig.properties file Used by TestBase class in Test package.
+```
+#### Utils:
+Utils package includes different test utilities which are needed by Page Object/Class or Test Object/Class.
+
+Most Common Utils are:
+```
+ - DataGenerator
+ DataGenerator is to generate test data like email, phone number, guid, bank account, user name, random string, random number, etc.
+ - DBHelper
+ DBHelper is to handle different DB operation - query, update, delete.
+ Also, DBHelper should be compatible with different type DB - mysql, db2, jdbc, etc. This requires jars to be imported in the project.
+ - LogHelper
+ During the running of test case user wants some information to be logged in the console. Information could be any detail depends upon the purpose. Log4j is applied for it here.
+ - PropertyLoader
+ PropertyLoader is to load the prperty value from the properties file in config folder.
+ - Verification
+ Verification helps your test execution to continue even if there are any assertion failures and throw all errors at the end.
+ Code is referred from https://muthutechno.wordpress.com/2015/01/26/implementing-verify-statements-for-testng-framework/.
+```
+#### Enums:
+#### config:
 
 ### Prerequisities
 
